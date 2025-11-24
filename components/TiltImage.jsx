@@ -46,16 +46,16 @@ export default function TiltedImage({ rotateAmplitude = 3, }) {
     }
 
     return (
-        <motion.figure ref={ref} className="relative w-full h-full [perspective:800px] mt-16 max-w-4xl mx-auto flex flex-col items-center justify-center" onMouseMove={handleMouse} onMouseLeave={handleMouseLeave}
+        <motion.figure ref={ref} className="relative w-full h-full [perspective:800px] mt-12 max-w-4xl mx-auto flex flex-col items-center justify-center" onMouseMove={handleMouse} onMouseLeave={handleMouseLeave}
             initial={{ y: 150, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 320, damping: 70, mass: 1 }}
         >
             <motion.div className="relative [transform-style:preserve-3d] w-full max-w-4xl" style={{ rotateX, rotateY }} >
-                <motion.img src="/assets/hero-section-showcase.png"
+                <motion.img src="/assets/hero-section-showcase.jpg"
                     className="w-full rounded-[15px] will-change-transform [transform:translateZ(0)]"
-                    alt="hero section showcase"
+                    alt="Brighton Palace Pier and seafront - our walking tour highlights"
                 />
             </motion.div>
         </motion.figure>

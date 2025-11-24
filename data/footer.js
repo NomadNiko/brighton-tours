@@ -1,21 +1,21 @@
 export const footerData = [
     {
-        title: "Product",
+        title: "Tours",
         links: [
-            { name: "Home", href: "/" },
-            { name: "Support", href: "/support" },
-            { name: "Pricing", href: "/pricing" },
-            { name: "Affiliate", href: "/affiliate" },
+            { name: "Free Walking Tour", href: "/" },
+            { name: "Pub Crawls", href: "#pricing" },
+            { name: "Book Now", href: "#pricing" },
+            { name: "Private Groups", href: "#contact" },
         ]
     },
     {
-        title: "Resources",
+        title: "Information",
         links: [
-            { name: "Company", href: "/company" },
-            { name: "Blogs", href: "/blogs" },
-            { name: "Community", href: "/community" },
-            { name: "Careers", href: "/careers" },
-            { name: "About", href: "/about" },
+            { name: "About Niko", href: "#features" },
+            { name: "Reviews", href: "#testimonials" },
+            { name: "Brighton Guide", href: "/guide" },
+            { name: "FAQ", href: "/faq" },
+            { name: "Contact", href: "#contact" },
         ]
     },
     {

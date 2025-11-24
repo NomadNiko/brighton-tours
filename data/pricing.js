@@ -1,42 +1,46 @@
 export const pricingData = [
     {
-        name: "Basic",
-        price: 29,
-        period: "month",
+        name: "Free Walking Tour",
+        price: 0,
+        period: "per person",
         features: [
-            "Access to all basic courses",
-            "Community support",
-            "10 practice projects",
-            "Course completion certificate",
-            "Basic code review"
-        ],
-        mostPopular: false
-    },
-    {
-        name: "Pro",
-        price: 79,
-        period: "month",
-        features: [
-            "Access to all Pro courses",
-            "Priority community support",
-            "30 practice projects",
-            "Course completion certificate",
-            "Advance code review",
-            "1-on-1 mentoring sessions",
-            "Job assistance"
+            "2-3 hour guided tour",
+            "Royal Pavilion & Palace Pier",
+            "British Airways i360 views",
+            "The Lanes & North Laine",
+            "Brighton Beach & seafront",
+            "Historic stories & hidden gems",
+            "Tips encouraged, not required"
         ],
         mostPopular: true
     },
     {
-        name: "Enterprise",
-        price: 199,
-        period: "month",
+        name: "Weeknight Pub Crawl",
+        price: 15,
+        period: "per night",
         features: [
-            "Access to all courses",
-            "Dedicated support",
-            "Unlimited projects",
-            "Course completion certificate",
-            "Premium code review"
+            "Sunday to Thursday evenings",
+            "4-5 best Brighton pubs",
+            "Welcome drink included",
+            "Meet fellow travelers",
+            "Local insider knowledge",
+            "Fun drinking games",
+            "Skip the weekend crowds"
+        ],
+        mostPopular: false
+    },
+    {
+        name: "Pub Crawl Pass",
+        price: 40,
+        period: "3 nights",
+        features: [
+            "Valid any 3 weeknights",
+            "All pub crawl benefits",
+            "Welcome drink each night",
+            "Priority meetup spots",
+            "Flexible scheduling",
+            "Best value option",
+            "Make new friends"
         ],
         mostPopular: false
     }

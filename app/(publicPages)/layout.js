@@ -2,8 +2,8 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-    title: "pixels - PrebuiltUI",
-    description: "pixels is a next.js template for building modern, fast, and secure saas applications.",
+    title: "Brighton Tours | Free Walking Tours & Pub Crawls with Niko the Nomad",
+    description: "Discover Brighton's iconic landmarks with expert local guide Niko the Nomad. Free walking tours of the Royal Pavilion, Palace Pier, The Lanes & more. Plus weeknight pub crawls Sun-Thu.",
 };
 
 export default function Layout({ children }) {
