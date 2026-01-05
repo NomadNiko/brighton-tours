@@ -44,8 +44,11 @@ export default function Navbar() {
                 </div>
 
                 {/* Professional CTA button */}
-                <a href="#pricing" className="hidden md:block ml-12 px-6 py-2.5 bg-sky-500 hover:bg-sky-600 active:scale-95 transition-all rounded-lg text-white font-medium shadow-md hover:shadow-lg">
+                <a href="#pricing" className="hidden md:block ml-8 px-6 py-2.5 bg-sky-500 hover:bg-sky-600 active:scale-95 transition-all rounded-lg text-white font-medium shadow-md hover:shadow-lg">
                     Book Tour
+                </a>
+                <a href="#contact" className="hidden md:block ml-2 px-6 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 active:scale-95 transition-all rounded-lg text-slate-700 font-medium shadow-sm hover:shadow-md">
+                    Contact
                 </a>
 
                 <button onClick={() => setIsOpen(true)} className="md:hidden text-slate-700">

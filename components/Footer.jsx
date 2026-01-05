@@ -54,20 +54,20 @@ export default function Footer() {
                 </p>
                 <div className="flex items-center gap-4 mt-4">
                     <a
-                        href="https://www.instagram.com/brightontours"
+                        href="https://www.instagram.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-sky-400 transition"
-                        aria-label="Follow Brighton Tours on Instagram"
+                        aria-label="Instagram"
                     >
                         <InstagramIcon className="size-5" />
                     </a>
                     <a
-                        href="https://www.facebook.com/brightontours"
+                        href="https://www.facebook.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-sky-400 transition"
-                        aria-label="Follow Brighton Tours on Facebook"
+                        aria-label="Facebook"
                     >
                         <FacebookIcon className="size-5" />
                     </a>
