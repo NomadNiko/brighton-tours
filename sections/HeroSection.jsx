@@ -5,9 +5,9 @@ import { motion } from "motion/react";
 
 export default function HeroSection() {
     const specialFeatures = [
-        "Expert local guide",
+        "Expert local guides",
         "Pay what you feel",
-        "4+ years experience",
+        "Years of experience",
     ];
 
     return (
@@ -17,7 +17,7 @@ export default function HeroSection() {
 
             {/* Clean badge - minimal styling */}
             <motion.a
-                href="#"
+                href="#pricing"
                 className="group flex items-center gap-2 rounded-full p-1 pr-3 mt-20 text-slate-700 bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all"
                 initial={{ y: -20, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -52,7 +52,7 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.1, type: "spring", stiffness: 200, damping: 20 }}
             >
-                Experience authentic Brighton walking tours exploring iconic landmarks from the Royal Pavilion to the vibrant Lanes. Expert local guide with 4 years experience. Plus Brighton pub crawls Sunday-Thursday!
+                Experience authentic Brighton walking tours exploring iconic landmarks from the Royal Pavilion to the vibrant Lanes. Expert local guides with years of experience. Plus, affordable Brighton pub crawls Sunday-Thursday!
             </motion.p>
 
             {/* Professional CTA buttons - solid colors */}

@@ -11,18 +11,16 @@ export const footerData = [
     {
         title: "Information",
         links: [
-            { name: "About Niko", href: "#features" },
+            { name: "About Us", href: "#features" },
             { name: "Reviews", href: "#testimonials" },
-            { name: "Brighton Guide", href: "/guide" },
-            { name: "FAQ", href: "/faq" },
             { name: "Contact", href: "#contact" },
         ]
     },
     {
         title: "Legal",
         links: [
-            { name: "Privacy", href: "/privacy" },
-            { name: "Terms", href: "/terms" },
+            { name: "Privacy", href: "#contact" },
+            { name: "Terms", href: "#contact" },
         ]
     }
 ];

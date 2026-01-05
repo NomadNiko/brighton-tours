@@ -11,10 +11,10 @@ const poppins = Poppins({
 export const metadata = {
     metadataBase: new URL('https://brighton-tours.co.uk'),
     title: {
-        default: 'Brighton Tours | Free Walking Tours & Pub Crawls with Niko the Nomad',
+        default: 'Brighton Tours | Free Walking Tours & Pub Crawls in Brighton',
         template: '%s | Brighton Tours'
     },
-    description: 'Join free walking tours of Brighton with expert local guide Niko the Nomad. Explore Royal Pavilion, Palace Pier, The Lanes, North Laine & more. Plus weeknight pub crawls Sunday-Thursday.',
+    description: 'Join free walking tours of Brighton with our experienced local guides. Explore Royal Pavilion, Palace Pier, The Lanes, North Laine & more. Plus weeknight pub crawls Sunday-Thursday.',
     keywords: [
         'free walking tours brighton',
         'brighton walking tours',
@@ -23,7 +23,7 @@ export const metadata = {
         'brighton pub crawls',
         'brighton pub crawl',
         'free tours brighton',
-        'niko the nomad',
+        'brighton tour guides',
         'brighton tour guide',
         'royal pavilion tours',
         'brighton palace pier',
@@ -34,9 +34,14 @@ export const metadata = {
         'brighton attractions',
         'brighton sightseeing'
     ],
-    authors: [{ name: 'Niko the Nomad' }],
+    authors: [{ name: 'Brighton Tours' }],
     creator: 'Brighton Tours',
     publisher: 'Brighton Tours',
+    icons: {
+        icon: [
+            { url: '/favicon.ico?v=20251125', sizes: '48x48', type: 'image/x-icon' }
+        ],
+    },
     formatDetection: {
         email: false,
         address: false,
@@ -48,20 +53,20 @@ export const metadata = {
         url: 'https://brighton-tours.co.uk',
         siteName: 'Brighton Tours',
         title: 'Brighton Tours | Free Walking Tours & Pub Crawls',
-        description: 'Free walking tours of Brighton\'s iconic landmarks with expert guide Niko the Nomad. Royal Pavilion, Palace Pier, The Lanes & weeknight pub crawls.',
+        description: 'Free walking tours of Brighton\'s iconic landmarks with our experienced local guides. Royal Pavilion, Palace Pier, The Lanes & weeknight pub crawls.',
         images: [
             {
                 url: '/og-image.jpg',
                 width: 1200,
                 height: 630,
-                alt: 'Brighton Tours - Free Walking Tours with Niko the Nomad',
+                alt: 'Brighton Tours - Free Walking Tours in Brighton',
             },
         ],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Brighton Tours | Free Walking Tours & Pub Crawls',
-        description: 'Free walking tours of Brighton with Niko the Nomad. Explore iconic landmarks & join weeknight pub crawls.',
+        description: 'Free walking tours of Brighton with experienced local guides. Explore iconic landmarks & join weeknight pub crawls.',
         images: ['/og-image.jpg'],
         creator: '@brightontours',
     },
@@ -85,7 +90,6 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en-GB">
             <head>
-                <link rel="preload" href="/assets/background-splash.svg" as="image" />
                 <link rel="canonical" href="https://brighton-tours.co.uk" />
                 <meta name="geo.region" content="GB-BNH" />
                 <meta name="geo.placename" content="Brighton" />
@@ -104,7 +108,7 @@ export default function RootLayout({ children }) {
                                     "alternateName": "Brighton Free Walking Tours",
                                     "url": "https://brighton-tours.co.uk",
                                     "logo": "https://brighton-tours.co.uk/logo.png",
-                                    "description": "Free walking tours and pub crawls in Brighton, UK led by expert local guide Niko the Nomad with 4 years of experience.",
+                                    "description": "Free walking tours and affordable weeknight pub crawls in Brighton, UK led by experienced local guides.",
                                     "address": {
                                         "@type": "PostalAddress",
                                         "addressLocality": "Brighton",
@@ -139,7 +143,8 @@ export default function RootLayout({ children }) {
                                         "longitude": "-0.13947"
                                     },
                                     "url": "https://brighton-tours.co.uk",
-                                    "telephone": "+44-XXX-XXX-XXXX",
+                                    "telephone": "+447426942093",
+                                    "email": "contact@brighton-tours.co.uk",
                                     "priceRange": "Free-£40",
                                     "openingHoursSpecification": [
                                         {
@@ -160,6 +165,7 @@ export default function RootLayout({ children }) {
                                     "@type": "Product",
                                     "name": "Free Walking Tour Brighton",
                                     "description": "2-3 hour guided walking tour of Brighton's iconic landmarks including Royal Pavilion, Palace Pier, British Airways i360, The Lanes, and North Laine. Tips-based, no fixed price.",
+                                    "image": "https://brighton-tours.co.uk/assets/brighton-free-walking-tour.png",
                                     "brand": {
                                         "@type": "Brand",
                                         "name": "Brighton Tours"
@@ -169,7 +175,43 @@ export default function RootLayout({ children }) {
                                         "price": "0",
                                         "priceCurrency": "GBP",
                                         "availability": "https://schema.org/InStock",
-                                        "url": "https://brighton-tours.co.uk/#pricing"
+                                        "url": "https://brighton-tours.co.uk/#pricing",
+                                        "priceValidUntil": "2026-12-31",
+                                        "shippingDetails": {
+                                            "@type": "OfferShippingDetails",
+                                            "shippingRate": {
+                                                "@type": "MonetaryAmount",
+                                                "value": "0",
+                                                "currency": "GBP"
+                                            },
+                                            "shippingDestination": {
+                                                "@type": "DefinedRegion",
+                                                "addressCountry": "GB"
+                                            },
+                                            "deliveryTime": {
+                                                "@type": "ShippingDeliveryTime",
+                                                "handlingTime": {
+                                                    "@type": "QuantitativeValue",
+                                                    "minValue": "0",
+                                                    "maxValue": "0",
+                                                    "unitCode": "DAY"
+                                                },
+                                                "transitTime": {
+                                                    "@type": "QuantitativeValue",
+                                                    "minValue": "0",
+                                                    "maxValue": "0",
+                                                    "unitCode": "DAY"
+                                                }
+                                            }
+                                        },
+                                        "hasMerchantReturnPolicy": {
+                                            "@type": "MerchantReturnPolicy",
+                                            "applicableCountry": "GB",
+                                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                                            "merchantReturnDays": "1",
+                                            "returnMethod": "https://schema.org/ReturnByMail",
+                                            "returnFees": "https://schema.org/FreeReturn"
+                                        }
                                     },
                                     "aggregateRating": {
                                         "@type": "AggregateRating",
@@ -181,6 +223,7 @@ export default function RootLayout({ children }) {
                                     "@type": "Product",
                                     "name": "Brighton Weeknight Pub Crawl",
                                     "description": "Weeknight pub crawl in Brighton running Sunday to Thursday. Visit 4-5 best Brighton pubs with local guide, includes welcome drink and drinking games.",
+                                    "image": "https://brighton-tours.co.uk/assets/brighton-weeknight-pub-crawl.png",
                                     "brand": {
                                         "@type": "Brand",
                                         "name": "Brighton Tours"
@@ -190,14 +233,55 @@ export default function RootLayout({ children }) {
                                         "price": "15",
                                         "priceCurrency": "GBP",
                                         "availability": "https://schema.org/InStock",
-                                        "url": "https://brighton-tours.co.uk/#pricing"
+                                        "url": "https://brighton-tours.co.uk/#pricing",
+                                        "priceValidUntil": "2026-12-31",
+                                        "shippingDetails": {
+                                            "@type": "OfferShippingDetails",
+                                            "shippingRate": {
+                                                "@type": "MonetaryAmount",
+                                                "value": "0",
+                                                "currency": "GBP"
+                                            },
+                                            "shippingDestination": {
+                                                "@type": "DefinedRegion",
+                                                "addressCountry": "GB"
+                                            },
+                                            "deliveryTime": {
+                                                "@type": "ShippingDeliveryTime",
+                                                "handlingTime": {
+                                                    "@type": "QuantitativeValue",
+                                                    "minValue": "0",
+                                                    "maxValue": "0",
+                                                    "unitCode": "DAY"
+                                                },
+                                                "transitTime": {
+                                                    "@type": "QuantitativeValue",
+                                                    "minValue": "0",
+                                                    "maxValue": "0",
+                                                    "unitCode": "DAY"
+                                                }
+                                            }
+                                        },
+                                        "hasMerchantReturnPolicy": {
+                                            "@type": "MerchantReturnPolicy",
+                                            "applicableCountry": "GB",
+                                            "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                                            "merchantReturnDays": "1",
+                                            "returnMethod": "https://schema.org/ReturnByMail",
+                                            "returnFees": "https://schema.org/FreeReturn"
+                                        }
+                                    },
+                                    "aggregateRating": {
+                                        "@type": "AggregateRating",
+                                        "ratingValue": "5",
+                                        "reviewCount": "50"
                                     }
                                 },
                                 {
                                     "@type": "Person",
                                     "name": "Niko the Nomad",
-                                    "jobTitle": "Tour Guide",
-                                    "description": "Expert local tour guide with 4 years of experience leading walking tours and pub crawls in Brighton.",
+                                    "jobTitle": "Founder",
+                                    "description": "Founder of Brighton Tours with over 4 years of experience in the Brighton tourism industry.",
                                     "worksFor": {
                                         "@type": "Organization",
                                         "name": "Brighton Tours"

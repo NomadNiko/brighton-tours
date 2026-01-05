@@ -1,0 +1,82 @@
+  ✓ Cleaned node_modules and lock files
+
+added 402 packages, and audited 403 packages in 21s
+
+148 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+  ✓ Core packages upgraded
+
+added 5 packages, changed 3 packages, and audited 408 packages in 9s
+
+151 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+  ✓ Next.js upgraded
+   Generating static pages using 1 worker (0/9) ...
+   Generating static pages using 1 worker (2/9) 
+   Generating static pages using 1 worker (4/9) 
+   Generating static pages using 1 worker (6/9) 
+ ✓ Generating static pages using 1 worker (9/9) in 718.2ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/contact
+├ ○ /apple-icon.png
+├ ○ /icon0.svg
+├ ○ /icon1.png
+└ ○ /manifest.json
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+  ✓ Build completed successfully
+[PM2] Applying action restartProcessId on app [brighton-tours](ids: [ 20 ])
+[PM2] [brighton-tours](20) ✓
+┌────┬─────────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
+│ id │ name                    │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
+├────┼─────────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
+│ 19 │ agentix                 │ default     │ 0.39.7  │ fork    │ 4103     │ 47s    │ 109  │ online    │ 0%       │ 56.4mb   │ ubuntu   │ disabled │
+│ 26 │ barvibez                │ default     │ N/A     │ fork    │ 1360     │ 4m     │ 0    │ online    │ 0%       │ 65.7mb   │ ubuntu   │ disabled │
+│ 20 │ brighton-tours          │ default     │ 0.39.7  │ fork    │ 4275     │ 0s     │ 1    │ online    │ 0%       │ 22.5mb   │ ubuntu   │ disabled │
+│ 2  │ cdserver                │ default     │ 0.39.7  │ fork    │ N/A      │ 0      │ 0    │ stopped   │ 0%       │ 0b       │ ubuntu   │ disabled │
+│ 1  │ czechdice               │ default     │ 0.39.7  │ fork    │ 1186     │ 4m     │ 0    │ online    │ 0%       │ 56.1mb   │ ubuntu   │ disabled │
+│ 8  │ formbotz                │ default     │ 0.39.7  │ fork    │ 1212     │ 4m     │ 0    │ online    │ 0%       │ 56.3mb   │ ubuntu   │ disabled │
+│ 12 │ hummingbirdfightclub    │ default     │ 0.39.7  │ fork    │ 1222     │ 4m     │ 0    │ online    │ 0%       │ 56.4mb   │ ubuntu   │ disabled │
+│ 22 │ ixplor-frontend         │ default     │ 0.39.7  │ fork    │ 1337     │ 4m     │ 0    │ online    │ 0%       │ 56.3mb   │ ubuntu   │ disabled │
+│ 21 │ ixplor-server           │ default     │ 0.39.7  │ fork    │ 1329     │ 4m     │ 0    │ online    │ 0%       │ 56.3mb   │ ubuntu   │ disabled │
+│ 6  │ lustless-admin          │ default     │ 0.39.7  │ fork    │ 1204     │ 4m     │ 0    │ online    │ 0%       │ 56.4mb   │ ubuntu   │ disabled │
+│ 7  │ lustless-server         │ default     │ 0.39.7  │ fork    │ N/A      │ 0      │ 0    │ stopped   │ 0%       │ 0b       │ ubuntu   │ disabled │
+│ 5  │ lustless-web            │ default     │ 0.39.7  │ fork    │ 1193     │ 4m     │ 0    │ online    │ 0%       │ 56.3mb   │ ubuntu   │ disabled │
+│ 10 │ matrix                  │ default     │ 0.39.7  │ fork    │ 1220     │ 4m     │ 0    │ online    │ 0%       │ 56.2mb   │ ubuntu   │ disabled │
+│ 24 │ menu-frontend           │ default     │ 0.39.7  │ fork    │ 1342     │ 4m     │ 0    │ online    │ 0%       │ 56.5mb   │ ubuntu   │ disabled │
+│ 23 │ menu-server             │ default     │ 0.39.7  │ fork    │ N/A      │ 0      │ 174  │ stopped   │ 0%       │ 0b       │ ubuntu   │ disabled │
+│ 25 │ menu-server             │ default     │ 1.2.0   │ fork    │ 1348     │ 4m     │ 0    │ online    │ 0%       │ 124.0mb  │ ubuntu   │ disabled │
+│ 13 │ nomadsoft               │ default     │ 0.39.7  │ fork    │ 1229     │ 4m     │ 0    │ online    │ 0%       │ 56.8mb   │ ubuntu   │ disabled │
+│ 3  │ nomadsoft-otp           │ default     │ 0.39.7  │ fork    │ N/A      │ 0      │ 369… │ stopped   │ 0%       │ 0b       │ ubuntu   │ disabled │
+│ 4  │ nomadsoft-otp-admin     │ default     │ 0.39.7  │ fork    │ 1191     │ 4m     │ 0    │ online    │ 0%       │ 55.5mb   │ ubuntu   │ disabled │
+│ 16 │ pixels                  │ default     │ 0.39.7  │ fork    │ 1273     │ 4m     │ 0    │ online    │ 0%       │ 55.9mb   │ ubuntu   │ disabled │
+│ 17 │ portfolio               │ default     │ 0.39.7  │ fork    │ 1291     │ 4m     │ 0    │ online    │ 0%       │ 55.8mb   │ ubuntu   │ disabled │
+│ 11 │ provisioner-api         │ default     │ 1.0.0   │ fork    │ N/A      │ 0      │ 1    │ stopped   │ 0%       │ 0b       │ ubuntu   │ disabled │
+│ 9  │ saas                    │ default     │ 0.39.7  │ fork    │ N/A      │ 0      │ 1351 │ stopped   │ 0%       │ 0b       │ ubuntu   │ disabled │
+│ 18 │ saasly                  │ default     │ 0.39.7  │ fork    │ 1302     │ 4m     │ 0    │ online    │ 0%       │ 56.1mb   │ ubuntu   │ disabled │
+│ 14 │ slidex                  │ default     │ 0.39.7  │ fork    │ 1257     │ 4m     │ 0    │ online    │ 0%       │ 55.9mb   │ ubuntu   │ disabled │
+│ 15 │ spark                   │ default     │ 0.39.7  │ fork    │ 1248     │ 4m     │ 0    │ online    │ 0%       │ 56.3mb   │ ubuntu   │ disabled │
+└────┴─────────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
+Module
+┌────┬──────────────────────────────┬───────────────┬──────────┬──────────┬──────┬──────────┬──────────┬──────────┐
+│ id │ module                       │ version       │ pid      │ status   │ ↺    │ cpu      │ mem      │ user     │
+├────┼──────────────────────────────┼───────────────┼──────────┼──────────┼──────┼──────────┼──────────┼──────────┤
+│ 0  │ pm2-logrotate                │ 2.7.0         │ 1160     │ online   │ 0    │ 0%       │ 60.6mb   │ ubuntu   │
+└────┴──────────────────────────────┴───────────────┴──────────┴──────────┴──────┴──────────┴──────────┴──────────┘
+  ✓ PM2 instance restarted
+Completed: Wed Dec 17 18:11:27 UTC 2025
+
+=== Processing: hummingbirdfightclub ===
+Started: Wed Dec 17 18:11:27 UTC 2025
+  ✓ Backed up package-lock.json

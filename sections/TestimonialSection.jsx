@@ -5,11 +5,11 @@ import Marquee from "react-fast-marquee";
 
 export default function TestimonialSection() {
     return (
-        <div id="testimonials" className="px-4 md:px-16 lg:px-24 xl:px-32 bg-white pt-0 pb-12">
+        <div id="testimonials" className="px-4 md:px-16 lg:px-24 xl:px-32 bg-white pt-8 pb-12">
             <SectionTitle
                 text1="Reviews"
                 text2="What our guests say"
-                text3="Read authentic reviews from travelers who have experienced Brighton Tours with Niko. Join hundreds of happy guests who've discovered Brighton's magic."
+                text3="Read authentic reviews from travelers who have experienced Brighton Tours. Join hundreds of happy guests who've discovered Brighton's magic."
             />
 
             {/* Professional marquee with white gradient edges */}

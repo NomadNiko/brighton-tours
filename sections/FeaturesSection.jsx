@@ -7,7 +7,7 @@ import { featuresData } from "@/data/features";
 
 export default function FeaturesSection() {
     return (
-        <div id="features" className="px-4 md:px-16 lg:px-24 xl:px-32 bg-white pt-0 pb-0">
+        <div id="features" className="px-4 md:px-16 lg:px-24 xl:px-32 bg-white pt-8 pb-0">
             <SectionTitle
                 text1="Walking Tours"
                 text2="Why Choose Our Brighton Walking Tours"
@@ -49,7 +49,7 @@ export default function FeaturesSection() {
                     viewport={{ once: true }}
                     transition={{ type: "spring", stiffness: 260, damping: 22 }}
                 >
-                    Our Brighton walking tours and pub crawls offer authentic experiences led by Niko the Nomad, a passionate local Brighton tour guide with 4 years of experience showing visitors the best of Brighton's culture, history, and nightlife.
+                    Our Brighton walking tours and pub crawls offer authentic experiences led by our experienced local guides, passionate about showing visitors the best of Brighton's culture, history, and nightlife.
                 </motion.p>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 mt-6 gap-8">

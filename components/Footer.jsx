@@ -1,6 +1,6 @@
 'use client'
 import { footerData } from "@/data/footer";
-import { DribbbleIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from "lucide-react";
+import { InstagramIcon, FacebookIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
@@ -50,40 +50,26 @@ export default function Footer() {
                 transition={{ type: "spring", stiffness: 240, damping: 22 }}
             >
                 <p className="max-w-60 leading-relaxed">
-                    Discover Brighton's hidden gems and iconic landmarks with passionate local guide Niko the Nomad.
+                    Discover Brighton's hidden gems and iconic landmarks with our passionate local guides.
                 </p>
                 <div className="flex items-center gap-4 mt-4">
                     <a
-                        href="https://dribbble.com/prebuiltui"
+                        href="https://www.instagram.com/brightontours"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="hover:text-sky-400 transition"
+                        aria-label="Follow Brighton Tours on Instagram"
                     >
-                        <DribbbleIcon className="size-5" />
+                        <InstagramIcon className="size-5" />
                     </a>
                     <a
-                        href="https://www.linkedin.com/company/prebuiltui"
+                        href="https://www.facebook.com/brightontours"
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
                         className="hover:text-sky-400 transition"
+                        aria-label="Follow Brighton Tours on Facebook"
                     >
-                        <LinkedinIcon className="size-5" />
-                    </a>
-                    <a
-                        href="https://x.com/prebuiltui"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:text-sky-400 transition"
-                    >
-                        <TwitterIcon className="size-5" />
-                    </a>
-                    <a
-                        href="https://www.youtube.com/@prebuiltui"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:text-sky-400 transition"
-                    >
-                        <YoutubeIcon className="size-6" />
+                        <FacebookIcon className="size-5" />
                     </a>
                 </div>
                 <p className="mt-4 text-center text-slate-500">

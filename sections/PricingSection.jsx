@@ -36,10 +36,10 @@ export default function PricingSection() {
 
                         <p className="font-semibold text-slate-900 text-lg mb-2">{plan.name}</p>
 
-                        <h1 className="text-5xl font-bold text-slate-900">
+                        <p className="text-5xl font-bold text-slate-900">
                             £{plan.price}
                             <span className="text-slate-500 font-normal text-base">/{plan.period}</span>
-                        </h1>
+                        </p>
 
                         <ul className="list-none text-slate-600 mt-8 space-y-3 text-left">
                             {plan.features.map((feature, index) => (

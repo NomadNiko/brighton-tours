@@ -16,7 +16,7 @@ export default function SectionTitle({ text1, text2, text3 }) {
             </motion.p>
 
             {/* Strong, clear heading */}
-            <motion.h3
+            <motion.h2
                 className="text-3xl md:text-4xl font-semibold text-center mx-auto mt-4 text-slate-900"
                 initial={{ y: 80, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -24,7 +24,7 @@ export default function SectionTitle({ text1, text2, text3 }) {
                 transition={{ delay: 0.1, type: "spring", stiffness: 240, damping: 20 }}
             >
                 {text2}
-            </motion.h3>
+            </motion.h2>
 
             {/* Professional description text */}
             <motion.p
