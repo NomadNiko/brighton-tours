@@ -63,13 +63,13 @@ export default function HeroSection() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 20 }}
             >
-                <button className="bg-sky-500 hover:bg-sky-600 text-white rounded-lg px-8 h-12 font-medium shadow-md hover:shadow-lg transition-all">
+                <a href="#pricing" className="bg-sky-500 hover:bg-sky-600 text-white rounded-lg px-8 h-12 font-medium shadow-md hover:shadow-lg transition-all flex items-center">
                     Book Free Tour
-                </button>
-                <button className="flex items-center gap-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 transition rounded-lg px-7 h-12 font-medium shadow-sm hover:shadow-md">
+                </a>
+                <a href="#pricing" className="flex items-center gap-2 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 transition rounded-lg px-7 h-12 font-medium shadow-sm hover:shadow-md">
                     <VideoIcon strokeWidth={1.5} size={20} />
                     <span>Pub Crawl Tickets</span>
-                </button>
+                </a>
             </motion.div>
 
             {/* Clean feature list */}

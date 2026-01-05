@@ -31,7 +31,8 @@ export default function CTASection() {
                 </motion.p>
             </div>
 
-            <motion.button
+            <motion.a
+                href="#pricing"
                 className="px-10 py-4 text-sky-600 bg-white hover:bg-slate-50 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all flex-shrink-0"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -39,7 +40,7 @@ export default function CTASection() {
                 transition={{ delay: 0.3, type: "spring", stiffness: 240, damping: 22 }}
             >
                 Book Now
-            </motion.button>
+            </motion.a>
         </motion.div>
     );
 }

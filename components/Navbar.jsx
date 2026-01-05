@@ -44,9 +44,9 @@ export default function Navbar() {
                 </div>
 
                 {/* Professional CTA button */}
-                <button className="hidden md:block ml-12 px-6 py-2.5 bg-sky-500 hover:bg-sky-600 active:scale-95 transition-all rounded-lg text-white font-medium shadow-md hover:shadow-lg">
+                <a href="#pricing" className="hidden md:block ml-12 px-6 py-2.5 bg-sky-500 hover:bg-sky-600 active:scale-95 transition-all rounded-lg text-white font-medium shadow-md hover:shadow-lg">
                     Book Tour
-                </button>
+                </a>
 
                 <button onClick={() => setIsOpen(true)} className="md:hidden text-slate-700">
                     <MenuIcon size={26} className="active:scale-90 transition" />
