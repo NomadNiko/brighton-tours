@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { connectDB } from '@/lib/db';
 import Booking from '@/lib/models/Booking';
 import TourSlot from '@/lib/models/TourSlot';
-import { sendBookingConfirmationEmail } from '@/lib/utils/email';
+import { sendBookingConfirmationEmail, sendBookingAdminNotification } from '@/lib/utils/email';
 
 export async function POST(request) {
   try {
@@ -50,12 +50,20 @@ export async function POST(request) {
     slot.bookedSpots += numberOfTourists;
     await slot.save();
 
-    // Send confirmation email
+    // Send confirmation email to customer
     await sendBookingConfirmationEmail({
       to: contactEmail.toLowerCase().trim(),
       tourDate: slot.date,
       startTime: slot.startTime,
       numberOfTourists,
+    });
+
+    // Notify admin of new booking
+    await sendBookingAdminNotification({
+      tourDate: slot.date,
+      startTime: slot.startTime,
+      numberOfTourists,
+      contactEmail: contactEmail.toLowerCase().trim(),
     });
 
     return NextResponse.json({
