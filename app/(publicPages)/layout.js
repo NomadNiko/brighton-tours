@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata = {
     title: "Free Walking Tours & Pub Crawls in Brighton",
@@ -12,6 +13,7 @@ export default function Layout({ children }) {
             <Navbar />
             {children}
             <Footer />
+            <CookieConsent />
         </>
     );
 }

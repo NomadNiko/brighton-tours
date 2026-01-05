@@ -1,10 +1,14 @@
 'use client'
+import { useState } from 'react';
 import SectionTitle from "@/components/SectionTitle"
+import BookingEngine from "@/components/BookingEngine"
 import { pricingData } from "@/data/pricing";
 import { CheckIcon } from "lucide-react";
 import { motion } from "motion/react";
 
 export default function PricingSection() {
+    const [bookingOpen, setBookingOpen] = useState(false);
+
     return (
         <div id="pricing" className="px-4 md:px-16 lg:px-24 xl:px-32 bg-slate-50 pt-12 pb-0">
             <SectionTitle
@@ -13,7 +17,6 @@ export default function PricingSection() {
                 text3="Join our free walking tours Brighton or book weeknight pub crawl tickets — flexible options for every traveler exploring Brighton's best attractions."
             />
 
-            {/* Professional, clean pricing cards - white backgrounds */}
             <div className="flex flex-wrap items-center justify-center gap-8 mt-6">
                 {pricingData.map((plan, index) => (
                     <motion.div
@@ -42,29 +45,40 @@ export default function PricingSection() {
                         </p>
 
                         <ul className="list-none text-slate-600 mt-8 space-y-3 text-left">
-                            {plan.features.map((feature, index) => (
-                                <li key={index} className="flex items-start gap-3">
+                            {plan.features.map((feature, idx) => (
+                                <li key={idx} className="flex items-start gap-3">
                                     <CheckIcon className="size-5 text-sky-500 mt-0.5 flex-shrink-0" />
                                     <p className="leading-relaxed">{feature}</p>
                                 </li>
                             ))}
                         </ul>
 
-                        <button
-                            type="button"
-                            className={`w-full py-3.5 rounded-lg font-semibold mt-8 transition-all shadow-md hover:shadow-lg ${
-                                plan.mostPopular
-                                    ? 'bg-sky-500 text-white hover:bg-sky-600'
-                                    : 'bg-slate-900 hover:bg-slate-800 text-white'
-                            }`}
-                        >
-                            {plan.price === 0 ? 'Book Free Tour' : 'Buy Tickets'}
-                        </button>
+                        <div className="mt-8">
+                            <div className="relative">
+                                <button
+                                    type="button"
+                                    disabled={plan.price > 0}
+                                    onClick={() => plan.price === 0 && setBookingOpen(true)}
+                                    className={`w-full py-3.5 rounded-lg font-semibold transition-all shadow-md ${
+                                        plan.price > 0
+                                            ? 'bg-slate-300 text-slate-500 cursor-not-allowed'
+                                            : 'bg-sky-500 text-white hover:bg-sky-600 hover:shadow-lg'
+                                    }`}
+                                >
+                                    {plan.price === 0 ? 'Book Free Tour' : 'Buy Tickets'}
+                                </button>
+                                {plan.price > 0 && (
+                                    <span className="absolute inset-0 flex items-center justify-center text-red-500 text-5xl font-bold pointer-events-none">✕</span>
+                                )}
+                            </div>
+                            {plan.price > 0 && (
+                                <p className="text-red-600 text-sm mt-2 font-medium text-center">Tours suspended — resuming soon</p>
+                            )}
+                        </div>
                     </motion.div>
                 ))}
             </div>
 
-            {/* Add trust indicators */}
             <motion.div
                 className="mt-6 text-center"
                 initial={{ y: 80, opacity: 0 }}
@@ -76,6 +90,8 @@ export default function PricingSection() {
                     Trusted by 1,000+ visitors • All tours run rain or shine • Easy online booking
                 </p>
             </motion.div>
+
+            <BookingEngine isOpen={bookingOpen} onClose={() => setBookingOpen(false)} />
         </div>
     );
 }
