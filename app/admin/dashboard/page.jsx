@@ -70,6 +70,7 @@ export default function AdminDashboard() {
   const [analytics, setAnalytics] = useState(null);
   const [bookings, setBookings] = useState([]);
   const [slots, setSlots] = useState([]);
+  const [visitors, setVisitors] = useState(null);
   const [activeTab, setActiveTab] = useState('overview');
   const [loading, setLoading] = useState(true);
   const [expandedSlot, setExpandedSlot] = useState(null);
@@ -110,17 +111,19 @@ export default function AdminDashboard() {
   const loadData = async () => {
     setLoading(true);
     try {
-      const [analyticsRes, bookingsRes, slotsRes] = await Promise.all([
+      const [analyticsRes, bookingsRes, slotsRes, visitorsRes] = await Promise.all([
         fetch('/api/admin/analytics', { headers: getAuthHeaders() }),
         fetch('/api/admin/bookings', { headers: getAuthHeaders() }),
         fetch('/api/admin/slots', { headers: getAuthHeaders() }),
+        fetch('/api/admin/visitors', { headers: getAuthHeaders() }),
       ]);
-      const [analyticsData, bookingsData, slotsData] = await Promise.all([
-        analyticsRes.json(), bookingsRes.json(), slotsRes.json(),
+      const [analyticsData, bookingsData, slotsData, visitorsData] = await Promise.all([
+        analyticsRes.json(), bookingsRes.json(), slotsRes.json(), visitorsRes.json(),
       ]);
       setAnalytics(analyticsData.data);
       setBookings(bookingsData.data || []);
       setSlots(slotsData.data || []);
+      setVisitors(visitorsData.data || null);
     } catch (e) {
       console.error('Failed to load data:', e);
     } finally {
@@ -284,7 +287,7 @@ export default function AdminDashboard() {
 
       <div className="max-w-7xl mx-auto px-4 py-4">
         <div className="flex gap-2 mb-6">
-          {['overview', 'bookings', 'tour slots'].map((tab) => (
+          {['overview', 'bookings', 'tour slots', 'analytics'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -541,6 +544,92 @@ export default function AdminDashboard() {
                   ))}
                 </div>
               )}
+            </div>
+          </div>
+        )}
+
+        {/* Analytics */}
+        {activeTab === 'analytics' && visitors && (
+          <div className="space-y-6">
+            {/* Stats Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-sm font-medium text-slate-600 mb-2">Top Countries</h3>
+                {visitors.countryStats?.length > 0 ? (
+                  <ul className="space-y-2">
+                    {visitors.countryStats.map((c, i) => (
+                      <li key={i} className="flex justify-between text-sm">
+                        <span className="text-slate-700">{c._id || 'Unknown'}</span>
+                        <span className="font-medium text-slate-900">{c.count}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : <p className="text-slate-500 text-sm">No data yet</p>}
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-sm font-medium text-slate-600 mb-2">Top Referrers</h3>
+                {visitors.referrerStats?.length > 0 ? (
+                  <ul className="space-y-2">
+                    {visitors.referrerStats.map((r, i) => (
+                      <li key={i} className="flex justify-between text-sm">
+                        <span className="text-slate-700 truncate max-w-[180px]">{r._id || 'Direct'}</span>
+                        <span className="font-medium text-slate-900">{r.count}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : <p className="text-slate-500 text-sm">No data yet</p>}
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-sm font-medium text-slate-600 mb-2">Daily Visitors (Last 30 Days)</h3>
+                {visitors.dailyStats?.length > 0 ? (
+                  <div className="h-32 flex items-end gap-1">
+                    {visitors.dailyStats.map((d, i) => {
+                      const max = Math.max(...visitors.dailyStats.map(x => x.count));
+                      const height = max > 0 ? (d.count / max) * 100 : 0;
+                      return (
+                        <div key={i} className="flex-1 bg-sky-500 rounded-t" style={{ height: `${height}%` }} title={`${d._id}: ${d.count}`} />
+                      );
+                    })}
+                  </div>
+                ) : <p className="text-slate-500 text-sm">No data yet</p>}
+              </div>
+            </div>
+
+            {/* Visitors Table */}
+            <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+              <div className="px-4 py-3 border-b border-slate-100">
+                <h3 className="font-semibold text-slate-900">Recent Visitors ({visitors.total})</h3>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-slate-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-slate-600">Last Visit</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-slate-600">IP Address</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-slate-600">Location</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-slate-600">Visits</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-slate-600">Referrer</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-slate-600">Browser</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {visitors.visitors?.length === 0 ? (
+                      <tr><td colSpan={6} className="px-4 py-8 text-center text-slate-500">No visitors yet</td></tr>
+                    ) : visitors.visitors?.map((v) => (
+                      <tr key={v._id}>
+                        <td className="px-4 py-3 text-sm text-slate-600">{new Date(v.lastVisit).toLocaleString()}</td>
+                        <td className="px-4 py-3 text-sm font-mono text-slate-600">{v.ipAddress || '-'}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600">
+                          {[v.city, v.region, v.country].filter(Boolean).join(', ') || '-'}
+                        </td>
+                        <td className="px-4 py-3 text-sm text-slate-900 font-medium">{v.visitCount}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 max-w-[200px] truncate">{v.referrer || 'Direct'}</td>
+                        <td className="px-4 py-3 text-sm text-slate-600 max-w-[200px] truncate">{v.userAgent?.split(' ').slice(0, 3).join(' ') || '-'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}
