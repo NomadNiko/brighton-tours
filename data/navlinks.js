@@ -3,4 +3,5 @@ export const navlinks = [
     { name: "Tours", href: "#features" },
     { name: "Reviews", href: "#testimonials" },
     { name: "Tickets", href: "#pricing" },
+    { name: "Contact", href: "#contact" },
 ];
